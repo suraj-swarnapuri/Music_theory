@@ -1,4 +1,4 @@
-
+import pdb
 class Note():
     """
     represents the atomic unit for music
@@ -6,14 +6,14 @@ class Note():
     """
 
     def __init__(self,note_id):
-        if note_id ==-1:
-            self._id = 11
-        elif note_id ==0:
-            self._id = 12
+        print("note id: %i" % note_id)
+        if note_id <1:
+            self._id = note_id +12
+        elif note_id > 12:
+            self._id = note_id - 12
         else:
-            self._id = note_id % 12
+            self._id = note_id
             
-        self._id = note_id
     def getName(self):
         name_map = {
             1: 'C',
